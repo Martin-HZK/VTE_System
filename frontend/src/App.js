@@ -19,7 +19,7 @@ function App() {
         </a>
       </header> */}
       <div>
-        <h1>My first React App</h1>
+        <h1 className='text-3xl font-bold underline'>My first React App</h1>
       </div>
 
     </div>
