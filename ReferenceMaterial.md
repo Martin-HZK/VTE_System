@@ -24,6 +24,8 @@ This is the list of all the possible useful tutorial that we referred to during 
 
 **TailwindCSS**: https://tailwindui.com/templates?ref=sidebar
 
+> Important package for sizing: @tailwindcss/aspect-ratio
+
 **Icons**: https://fontawesome.com/versions
 
 ## Useful Plugins
@@ -39,3 +41,9 @@ This is the list of all the possible useful tutorial that we referred to during 
 **Dependencies Search**: https://mvnrepository.com
 
 **Integrate MySQL**: https://medium.com/@tecnicorabi/integrating-mysql-with-spring-boot-a-comprehensive-guide-all-in-one-c30b7b44a043
+
+## MySQL
+
+Installation and create table: https://www.youtube.com/watch?v=wgRwITQHszU
+
+> If click on the ⚡️icon with **I**, we only execute the SQL with the cursor hovering on
