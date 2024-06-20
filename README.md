@@ -33,6 +33,8 @@ Install the MySQL data base via the link here:
 * MySQL Server:  https://dev.mysql.com/downloads/mysql/
 * MySQL Workbench(UI): https://dev.mysql.com/downloads/workbench/
 
+**MacOS**
+
 > For **MacOS user**, we highly recommend you to start the MySQL server on terminal instead of 'Setting'
 >
 > ```shell
@@ -44,6 +46,8 @@ Install the MySQL data base via the link here:
 > sudo /usr/local/mysql-8.4.0-macos14-arm64/support-files/mysql.server restart
 > ```
 > Pay attention to the <u>path</u>!
+
+**Windows**
 
 > For **Windows user**, you need to initialize the server before your first start.
 >
