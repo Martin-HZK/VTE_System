@@ -44,6 +44,7 @@ Install the MySQL data base via the link here:
 > sudo /usr/local/mysql-8.4.0-macos14-arm64/support-files/mysql.server restart
 > ```
 > Pay attention to the <u>path</u>!
+>
 
 
 
