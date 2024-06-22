@@ -2,7 +2,7 @@ import React from 'react'
 
 const Login = () => {
 
-  
+
 
   return (
     <div>
@@ -21,14 +21,14 @@ const Login = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <input id="remember-me" name="remember-me" type="checkbox" className="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"/>
-              <label htmlFor="remember-me" className="block ml-2 text-sm text-gray-900">Remember me</label>
+              <label htmlFor="remember-me" className="block ml-2 text-sm text-gray-900">记住密码</label>
             </div>
             <div className="text-sm">
               <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">忘记密码</a>
             </div>
           </div>
           <div>
-            <button type="submit" className="w-full px-4 py-2 text-white bg-indigo-600 rounded hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50">Sign in</button>
+            <button type="submit" className="w-full px-4 py-2 text-white bg-indigo-600 rounded hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50">登陆</button>
           </div>
         </form>
       </div>
