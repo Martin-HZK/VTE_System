@@ -33,6 +33,7 @@ This is the list of all the possible useful tutorial that we referred to during 
 ### VSCode
 
 * ESlint: Grammar checker for JavaScript
+* ES7: offering large amount of extensions
 * Tailwind CSS IntelliSense: for auto complete, linting, hover preview...
 * Copilot: Automated Coding Helper
 
