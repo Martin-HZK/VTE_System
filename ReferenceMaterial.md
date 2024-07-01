@@ -3,8 +3,8 @@
 ```tex
 This is the list of all the possible useful tutorial that we referred to during the developing process.
 ```
-
-## How to start React project?
+## React
+### How to start React project?
 
 *Prerequisite*: Having Node.JS installed on your computer!(Download [<u>here</u>](https://nodejs.org/en/download/package-manager))
 
@@ -19,6 +19,12 @@ This is the list of all the possible useful tutorial that we referred to during 
   ```shell
   npm start
   ```
+
+### Hooks and Components
+
+Component is the most essential idea in React project. We will consider each reusable widgets as a 'component' and pull it up as a single file.
+
+Hook is another important tools used in React that may cause confusion to the developers who is new to React. Please refer to this link for detailed information: [Hook Tutorial](https://react.dev/reference/react/hooks).
 
 ## CSS
 
