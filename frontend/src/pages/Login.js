@@ -24,11 +24,11 @@ const Login = () => {
     //   return;
     // }
     try{
-      const response = await api.post("/api/login", loginInfo);
+      const response = await api.post("/login", loginInfo);
       console.log(response.data)
       if(response.data == true) {
         console.log("Login success!Redirecting to upload image page");
-        navigate("/home", { state: { propToPass: username} });
+        navigate("/dashboard", { state: { propToPass: username} });
         // setGlobUsername(username);
       } else {
         console.log("Login failed! Please check your username and password!");
