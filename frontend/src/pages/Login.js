@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import {useState} from 'react';
 import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
-import api from "../api/axiosConfig";
+import api from '../api/axiosConfig';
 const Login = () => {
 
   const [username, setUsername] = useState("");
@@ -21,7 +21,8 @@ const Login = () => {
     setChecked(e.target.checked);
   }
 
-  const handleLogin = async() => {
+  const handleLogin = async(e) => {
+    e.preventDefault();
     console.log("Username:", username);
     console.log("Password:", password);
     const loginInfo = {
@@ -40,14 +41,18 @@ const Login = () => {
       console.log(response.data)
       if(response.data == true) {
         console.log("Login success!Redirecting to upload image page");
-        navigate("/dashboard", { state: { propToPass: username} });
+        navigate("dashboard", { state: { propToPass: username} });
         // setGlobUsername(username);
       } else {
         console.log("Login failed! Please check your username and password!");
         alert("Login failed! Please check your username and password!");
       }
     } catch(err) {
-      console.log(err);
+      console.error(err.message);
+      console.error(err.code);
+      console.error(err.stack);
+      console.error(err.config);
+      console.error(err.config);
     }
     
 
