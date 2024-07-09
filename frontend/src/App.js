@@ -20,12 +20,13 @@ function App() {
           <Route index element={<Login />}></Route>
           <Route path='/register' element={<Register />}></Route>
 
-          <Route element={<MainLayout />}>
+          
+
+        </Route>
+        <Route element={<MainLayout />}>
             <Route path='/dashboard' element={<DashBoard />}></Route>
             <Route path='/details' element={<DetailedDashBoard />}></Route>
           </Route>
-
-        </Route>
         {/* There can be another system router integrated here */}
       </Routes>
       </Router>
