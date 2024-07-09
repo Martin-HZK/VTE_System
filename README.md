@@ -24,60 +24,21 @@ npm start
 
 ### Spring Boot Backend Project
 
-Open the 'backend' project using IntelliJ and click to start!
+### Configuration
 
-### MySQL Database
+Create a `Config.java` file to configure the interaction with the frontend project. For the details, please refer to the source code.
 
-Install the MySQL data base via the link here:
+#### Bug Fixes
 
-* MySQL Server:  https://dev.mysql.com/downloads/mysql/
-* MySQL Workbench(UI): https://dev.mysql.com/downloads/workbench/
+1. Wrong configuration of the collection name will cause the model file to be not recognized!
 
-**MacOS**
+2. If you have default configuration of other database, especially the relational databases, please add this line to your `application.properties` file
 
-> For **MacOS user**, we highly recommend you to start the MySQL server on terminal instead of 'Setting'
->
-> ```shell
-> # Start Server
-> sudo /usr/local/mysql-8.4.0-macos14-arm64/support-files/mysql.server start
-> # Stop Server
-> sudo /usr/local/mysql-8.4.0-macos14-arm64/support-files/mysql.server stop
-> # Restart Server
-> sudo /usr/local/mysql-8.4.0-macos14-arm64/support-files/mysql.server restart
-> ```
-> Pay attention to the <u>path</u>!
->
+   ```xml
+   spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+   ```
 
-**Windows**
+## MongoDB
 
-> For **Windows user**, you need to initialize the server before your first start.
->
-> Remember to run PowerShell  as an Administrator.
->
-> **Initialize**
->
-> ```shell
-> # change direction to where your mysql application is installed
-> # should usually be "C:\Program Files\MySQL\MySQL Server xxx\bin"
-> 
-> # install mysql server
-> PS C:\Program Files\MySQL\MySQL Server 8.4\bin> mysqld --install
-> # initialize data
-> PS C:\Program Files\MySQL\MySQL Server 8.4\bin> mysqld --initialize
-> # set root password as empty
-> PS C:\Program Files\MySQL\MySQL Server 8.4\bin> mysqld --initialize-inscure
-> ```
->
-> **Run Server**
->
-> ```shell
-> # Start Server
-> PS C:\Program Files\MySQL\MySQL Server 8.4\bin> net start mysql
-> # Stop Server
-> PS C:\Program Files\MySQL\MySQL Server 8.4\bin> net stop mysql
-> # Restart Server
-> PS C:\Program Files\MySQL\MySQL Server 8.4\bin> net restart mysql
-> ```
-
-
+Refer to the `application.properties` file for detailed configuration.
 

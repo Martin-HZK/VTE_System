@@ -54,3 +54,57 @@ Hook is another important tools used in React that may cause confusion to the de
 Installation and create table: https://www.youtube.com/watch?v=wgRwITQHszU
 
 > If click on the ⚡️icon with **I**, we only execute the SQL with the cursor hovering on
+
+### Configuration
+
+Install the MySQL data base via the link here:
+
+* MySQL Server:  https://dev.mysql.com/downloads/mysql/
+* MySQL Workbench(UI): https://dev.mysql.com/downloads/workbench/
+
+**MacOS**
+
+> For **MacOS user**, we highly recommend you to start the MySQL server on terminal instead of 'Setting'
+>
+> ```shell
+> # Start Server
+> sudo /usr/local/mysql-8.4.0-macos14-arm64/support-files/mysql.server start
+> # Stop Server
+> sudo /usr/local/mysql-8.4.0-macos14-arm64/support-files/mysql.server stop
+> # Restart Server
+> sudo /usr/local/mysql-8.4.0-macos14-arm64/support-files/mysql.server restart
+> ```
+>
+> Pay attention to the <u>path</u>!
+
+**Windows**
+
+> For **Windows user**, you need to initialize the server before your first start.
+>
+> Remember to run PowerShell  as an Administrator.
+>
+> **Initialize**
+>
+> ```shell
+> # change direction to where your mysql application is installed
+> # should usually be "C:\Program Files\MySQL\MySQL Server xxx\bin"
+> 
+> # install mysql server
+> PS C:\Program Files\MySQL\MySQL Server 8.4\bin> mysqld --install
+> # initialize data
+> PS C:\Program Files\MySQL\MySQL Server 8.4\bin> mysqld --initialize
+> # set root password as empty
+> PS C:\Program Files\MySQL\MySQL Server 8.4\bin> mysqld --initialize-inscure
+> ```
+>
+> **Run Server**
+>
+> ```shell
+> # Start Server
+> PS C:\Program Files\MySQL\MySQL Server 8.4\bin> net start mysql
+> # Stop Server
+> PS C:\Program Files\MySQL\MySQL Server 8.4\bin> net stop mysql
+> # Restart Server
+> PS C:\Program Files\MySQL\MySQL Server 8.4\bin> net restart mysql
+> ```
+
