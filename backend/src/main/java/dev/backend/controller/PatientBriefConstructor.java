@@ -20,7 +20,7 @@ public class PatientBriefConstructor {
     @Autowired
     private PatientBriefService patientBriefService;
 
-    @GetMapping
+    @GetMapping("/all_patients")
     public ResponseEntity<List<PatientBrief>> getAllPatientBrief() {
         return new ResponseEntity<List<PatientBrief>>(patientBriefService.allBriefInfo(), HttpStatus.OK);
     }
