@@ -6,8 +6,8 @@ const Navigator = () => {
 
   const navigator = useNavigate();
 
-  const handleLogin = () => {
-    const confirmLogout = window.confirm("您确定要推出系统吗?");
+  const handleLogout = () => {
+    const confirmLogout = window.confirm("您确定要退出系统吗?");
         if (confirmLogout) {
             // Perform logout action here
             console.log("User confirmed logout");
@@ -18,12 +18,16 @@ const Navigator = () => {
         }
   }
 
+  const handleReturn = () => {
+    navigator('/dashboard');
+  }
+  
   return (
     <div className="bg-teal-500 p-4 flex justify-between items-center">
-      <h1 className="text-white text-xl">首页</h1>
+      <button onClick={handleReturn} className="text-white text-xl">首页</button>
       <div className="flex items-center space-x-4">
         <button className="text-white">当前账户用户名</button>
-        <button onClick={handleLogin} className="text-white">登出</button>
+        <button onClick={handleLogout} className="text-white">登出</button>
       </div>
     </div>
   );
