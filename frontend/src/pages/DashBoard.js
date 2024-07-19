@@ -4,16 +4,15 @@ import api from '../api/axiosConfig';
 
 const DashBoard = () => {
   const [patients, setPatients] = useState([]);
-  const [newPatient, setNewPatient] = useState({
-    unicode: '', 
-    name: '',
-    gender: '',
-    age: '',
-    admissionDate: '',
-    lastExerciseDate: '',
-    recordDetails: ''
-  });
 
+  const [unicode, setUnicode] = useState("");
+  const [name, setName] = useState("");
+  const [gender, setGender] = useState("");
+  const [age, setAge] = useState("");
+  const [receive_time, setReceiveTime] = useState("");
+  const [recent_excercise, setRecentExcercise] = useState("");
+  const [detail_url, setDetailUrl] = useState("");
+  
   useEffect(() => {
     fetchPatients();
   }, []);
@@ -28,34 +27,44 @@ const DashBoard = () => {
     }
   };
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setNewPatient({ ...newPatient, [name]: value });
-  };
 
-  const addPatient = async () => {
-    // try {
-    //   const response = await axios.post('http://localhost:8080/doctor_info', newPatient);
-    //   setPatients([...patients, response.data]);
-    //   setNewPatient({
-    //     name: '',
-    //     gender: '',
-    //     age: '',
-    //     admissionDate: '',
-    //     lastExerciseDate: '',
-    //     recordDetails: ''
-    //   });
-    // } catch (err) {
-    //   console.error("Error adding patient:", err);
-    // }
-  };
+  const onFileUpload = async () => {
+    const formData = new FormData();
+  
+    formData.append("unicode", unicode);
+    formData.append("name", name);
+    formData.append("gender", gender);
+    formData.append("age", age);
+    formData.append("receive_time", receive_time);
+    formData.append("recent_excercise", recent_excercise);
+    formData.append("detail_url", detail_url);
+
+    try{
+      const response = await api.post("", formData);
+      console.log(response);
+      alert("The file is successfully uploaded");
+      setUnicode("");
+      setName("");
+      setGender("");
+      setAge("");
+      setReceiveTime("");
+      setRecentExcercise("");
+      setDetailUrl("");
+
+  } catch(err) {
+      console.log(err);
+      alert("Failed to upload goods");
+  }
+
+
+  }
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-xl font-bold mb-4">在院患者</h1>
       <div className="flex justify-end mb-4">
         <button
           className="bg-blue-500 text-white px-4 py-2 rounded"
-          onClick={addPatient}
+          // onClick={addPatient}
         >
           添加新病例
         </button>
