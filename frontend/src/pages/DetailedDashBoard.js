@@ -16,14 +16,8 @@ const DetailedDashBoard = () => {
   ];
 
   return (
-    <div className="min-h-screen p-4 bg-gray-50">
-      <div className="bg-teal-500 p-4 flex justify-between items-center text-white">
-        <h1 className="text-lg">首页</h1>
-        <div className="flex items-center">
-          <span>当前账户用户名</span>
-          <button className="ml-4">登出</button>
-        </div>
-      </div>
+    <div className="container mx-auto p-4">
+
       <div className="max-w-7xl mx-auto mt-4">
         <div className="bg-white shadow-md rounded p-6">
           <h2 className="text-lg font-semibold mb-4">康复人员信息</h2>
