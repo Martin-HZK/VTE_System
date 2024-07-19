@@ -28,10 +28,11 @@ public class PatientBrief {
 
     private String detail_url;
 
-    public PatientBrief(String unicode, String name, String gender, String receive_time, String recent_excercise, String detail_url) {
+    public PatientBrief(String unicode, String name, String gender, String age, String receive_time, String recent_excercise, String detail_url) {
         this.unicode = unicode;
         this.name = name;
         this.gender = gender;
+        this.age = age;
         this.receive_time = receive_time;
         this.recent_excercise = recent_excercise;
         this.detail_url = detail_url;
