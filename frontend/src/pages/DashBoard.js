@@ -79,9 +79,9 @@ const DashBoard = () => {
               <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">{patient.name}</td>
               <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">{patient.gender}</td>
               <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">{patient.age}</td>
-              <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">{patient.admissionDate}</td>
-              <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">{patient.lastExerciseDate}</td>
-              <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">{patient.recordDetails}</td>
+              <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">{patient.receive_time}</td>
+              <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">{patient.recent_excercise}</td>
+              <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">{patient.detail_url}</td>
             </tr>
           ))}
         </tbody>

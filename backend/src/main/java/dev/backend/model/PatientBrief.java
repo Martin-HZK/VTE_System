@@ -20,9 +20,11 @@ public class PatientBrief {
 
     private String gender;
 
-    private String receive_time;
+    private String age;
 
     private String recent_excercise;
+
+    private String receive_time;
 
     private String detail_url;
 

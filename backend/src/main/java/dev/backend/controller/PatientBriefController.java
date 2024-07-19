@@ -16,7 +16,7 @@ import java.util.List;
 @RestController
 @CrossOrigin
 @RequestMapping("/patient_brief")
-public class PatientBriefConstructor {
+public class PatientBriefController {
     @Autowired
     private PatientBriefService patientBriefService;
 
@@ -24,6 +24,5 @@ public class PatientBriefConstructor {
     public ResponseEntity<List<PatientBrief>> getAllPatientBrief() {
         return new ResponseEntity<List<PatientBrief>>(patientBriefService.allBriefInfo(), HttpStatus.OK);
     }
-
 
 }
