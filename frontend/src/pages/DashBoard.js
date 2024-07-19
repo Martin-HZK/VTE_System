@@ -1,10 +1,11 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import api from '../api/axiosConfig';
+import AddPatientPopUp from '../components/AddPatientPopUp';
 
 const DashBoard = () => {
   const [patients, setPatients] = useState([]);
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [unicode, setUnicode] = useState("");
   const [name, setName] = useState("");
   const [gender, setGender] = useState("");
@@ -62,12 +63,8 @@ const DashBoard = () => {
     <div className="container mx-auto p-4">
       <h1 className="text-xl font-bold mb-4">在院患者</h1>
       <div className="flex justify-end mb-4">
-        <button
-          className="bg-blue-500 text-white px-4 py-2 rounded"
-          // onClick={addPatient}
-        >
-          添加新病例
-        </button>
+      <button className="p-2 bg-blue-500 text-white rounded" onClick={() => setIsModalOpen(true)}>添加新病例</button>
+      <AddPatientPopUp isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onSave={onFileUpload} />
       </div>
       <table className="min-w-full border-collapse block md:table">
         <thead className="block md:table-header-group">
