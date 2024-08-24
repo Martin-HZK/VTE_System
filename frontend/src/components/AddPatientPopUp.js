@@ -7,9 +7,9 @@ const AddPatientPopUp = ({ isOpen, onClose, onSave }) => {
         name: '',
         gender: '',
         age: '',
-        recent_excercise: '',
+        // recent_exercise: '',
         receive_time: '',
-        detail_url: ''
+        // detail_url: ''
       });
     
       const handleChange = (e) => {
@@ -74,32 +74,13 @@ const AddPatientPopUp = ({ isOpen, onClose, onSave }) => {
               <label className="block text-gray-700 mr-4 w-24">入院时间:</label> {/* 调整 mr 和 w 值 */}
               <input
                 type="text"
-                name="recent_excercise"
-                value={formData.recent_excercise}
-                onChange={handleChange}
-                className="w-full p-2 border rounded"
-              />
-            </div>
-            <div className="flex items-center">
-              <label className="block text-gray-700 mr-4 w-24">近期锻炼:</label> {/* 调整 mr 和 w 值 */}
-              <input
-                type="text"
                 name="receive_time"
                 value={formData.receive_time}
                 onChange={handleChange}
                 className="w-full p-2 border rounded"
               />
             </div>
-            <div className="flex items-center">
-              <label className="block text-gray-700 mr-4 w-24">详情:</label> {/* 调整 mr 和 w 值 */}
-              <input
-                type="text"
-                name="detail_url"
-                value={formData.detail_url}
-                onChange={handleChange}
-                className="w-full p-2 border rounded"
-              />
-            </div>
+            
           </div>
           <div className="flex justify-end mt-4">
             <button

@@ -1,5 +1,6 @@
 import React from 'react'
-import { useState, useEffect, useNavigate } from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import api from '../api/axiosConfig';
 import AddPatientPopUp from '../components/AddPatientPopUp';
 
@@ -11,7 +12,7 @@ const DashBoard = () => {
   const [gender, setGender] = useState("");
   const [age, setAge] = useState("");
   const [receive_time, setReceiveTime] = useState("");
-  const [recent_excercise, setRecentExcercise] = useState("");
+  const [recent_exercise, setRecentExercise] = useState("");
   // const [detail_url, setDetailUrl] = useState("");
   // const [details, setDetails] = useState("");
   useEffect(() => {
@@ -40,7 +41,7 @@ const DashBoard = () => {
     formData.append("gender", gender);
     formData.append("age", age);
     formData.append("receive_time", receive_time);
-    formData.append("recent_excercise", recent_excercise);
+    // formData.append("recent_excercise", recent_excercise);
     // formData.append("detail_url", detail_url);
     // formData.append("details", details)
 
@@ -53,7 +54,7 @@ const DashBoard = () => {
       setGender("");
       setAge("");
       setReceiveTime("");
-      setRecentExcercise("");
+      // setRecentExcercise("");
       // setDetails("");
       // setDetailUrl("");
 
@@ -91,7 +92,7 @@ const DashBoard = () => {
               <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">{patient.gender}</td>
               <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">{patient.age}</td>
               <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">{patient.receive_time}</td>
-              <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">{patient.recent_excercise}</td>
+              <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">{patient.recent_exercise}</td>
               <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell" onClick={()=> navigate('details', { state: { propToPass: patient.unicode}}) }>详情</td>
             </tr>
           ))}
