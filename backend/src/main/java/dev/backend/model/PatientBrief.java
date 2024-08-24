@@ -6,6 +6,9 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+import java.util.Map;
+
 @Document(collection = "PatientBrief")
 @Data
 @AllArgsConstructor
@@ -26,15 +29,29 @@ public class PatientBrief {
 
     private String receive_time;
 
-    private String detail_url;
+    private List<Detail> details;
 
-    public PatientBrief(String unicode, String name, String gender, String age, String receive_time, String recent_excercise, String detail_url) {
+    // Getters and Setters
+
+    public static class Detail {
+        private String move_type;
+        private String completion;
+        private String score;
+        private String complete_time;
+
+        // Getters and Setters
+
+    }
+
+//    private String detail_url;
+//
+    public PatientBrief(String unicode, String name, String gender, String age, String receive_time, String recent_excercise, List<Detail> detials) {
         this.unicode = unicode;
         this.name = name;
         this.gender = gender;
         this.age = age;
         this.receive_time = receive_time;
         this.recent_excercise = recent_excercise;
-        this.detail_url = detail_url;
+        this.details = detials;
     }
 }

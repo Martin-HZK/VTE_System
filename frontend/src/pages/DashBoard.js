@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useNavigate } from 'react';
 import api from '../api/axiosConfig';
 import AddPatientPopUp from '../components/AddPatientPopUp';
 
@@ -12,11 +12,14 @@ const DashBoard = () => {
   const [age, setAge] = useState("");
   const [receive_time, setReceiveTime] = useState("");
   const [recent_excercise, setRecentExcercise] = useState("");
-  const [detail_url, setDetailUrl] = useState("");
-  
+  // const [detail_url, setDetailUrl] = useState("");
+  // const [details, setDetails] = useState("");
   useEffect(() => {
     fetchPatients();
   }, []);
+
+  const navigate = useNavigate();
+
 
   const fetchPatients = async () => {
     try {
@@ -38,7 +41,8 @@ const DashBoard = () => {
     formData.append("age", age);
     formData.append("receive_time", receive_time);
     formData.append("recent_excercise", recent_excercise);
-    formData.append("detail_url", detail_url);
+    // formData.append("detail_url", detail_url);
+    // formData.append("details", details)
 
     try{
       const response = await api.post("", formData);
@@ -50,7 +54,8 @@ const DashBoard = () => {
       setAge("");
       setReceiveTime("");
       setRecentExcercise("");
-      setDetailUrl("");
+      // setDetails("");
+      // setDetailUrl("");
 
   } catch(err) {
       console.log(err);
@@ -87,7 +92,7 @@ const DashBoard = () => {
               <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">{patient.age}</td>
               <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">{patient.receive_time}</td>
               <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">{patient.recent_excercise}</td>
-              <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">{patient.detail_url}</td>
+              <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell" onClick={()=> navigate('details', { state: { propToPass: patient.unicode}}) }>详情</td>
             </tr>
           ))}
         </tbody>
