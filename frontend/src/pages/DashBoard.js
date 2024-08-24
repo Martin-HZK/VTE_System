@@ -103,7 +103,7 @@ const DashBoard = () => {
               <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">{patient.age}</td>
               <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">{patient.receive_time}</td>
               <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">{patient.recent_exercise}</td>
-              <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell" onClick={()=> navigate('details', { state: { propToPass: patient.unicode}}) }>详情</td>
+              <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell" onClick={()=> navigate('/details', { state: { propToPass: patient.unicode}}) }>详情</td>
             </tr>
           ))}
         </tbody>

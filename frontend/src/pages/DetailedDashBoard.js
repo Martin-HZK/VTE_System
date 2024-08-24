@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { useLocation } from 'react-router-dom';
 const DetailedDashBoard = () => {
   const patientInfo = {
     name: 'Yinhe',
@@ -7,6 +7,8 @@ const DetailedDashBoard = () => {
     age: '25',
     admissionDate: '2020-12-1 12:12:12'
   };
+  const location = useLocation();
+  const { propToPass } = location.state || {}; // 获取传递的unicode
 
   const rehabilitationRecords = [
     { action: '动作名称A', status: '已完成', score: 90, date: '2024-06-21' },
@@ -31,7 +33,7 @@ const DetailedDashBoard = () => {
             <tbody>
               <tr>
                 <td className="border border-gray-300 p-2">{patientInfo.name}</td>
-                <td className="border border-gray-300 p-2">{patientInfo.gender}</td>
+                <td className="border border-gray-300 p-2">{propToPass}</td>
               </tr>
               <tr>
                 <th className="border border-gray-300 p-2">年龄</th>
