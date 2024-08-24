@@ -22,7 +22,7 @@ public class PatientBriefController {
         return new ResponseEntity<List<PatientBrief>>(patientBriefService.allBriefInfo(), HttpStatus.OK);
     }
 
-    @PostMapping("add_new_patient")
+    @PostMapping("/add_new_patient")
     public ResponseEntity<PatientBrief> addPatientBrief(
             @RequestParam("unicode") String unicode, @RequestParam("name") String name,
             @RequestParam("gender") String gender, @RequestParam("age") String age,
