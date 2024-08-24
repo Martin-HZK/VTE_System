@@ -33,20 +33,28 @@ const DashBoard = () => {
   };
 
 
-  const onFileUpload = async () => {
-    const formData = new FormData();
+  const onFileUpload = async(formData) => {
+    const sendFormData = new FormData();
   
-    formData.append("unicode", unicode);
-    formData.append("name", name);
-    formData.append("gender", gender);
-    formData.append("age", age);
-    formData.append("receive_time", receive_time);
+    sendFormData.append("unicode", formData.unicode);
+    sendFormData.append("name", formData.name);
+    sendFormData.append('gender', formData.gender);
+    sendFormData.append('age', formData.age);
+    sendFormData.append('receive_time', formData.receive_time);
+    // formData.append("unicode", unicode);
+    // formData.append("name", name);
+    // formData.append("gender", gender);
+    // formData.append("age", age);
+    // formData.append("receive_time", receive_time);
+
+
     // formData.append("recent_excercise", recent_excercise);
     // formData.append("detail_url", detail_url);
     // formData.append("details", details)
-
+    
     try{
-      const response = await api.post("", formData);
+      console.log("The form data is:", sendFormData);
+      const response = await api.post("/patient_brief/add_new_patient", sendFormData);
       console.log(response);
       alert("The file is successfully uploaded");
       setUnicode("");
@@ -64,7 +72,9 @@ const DashBoard = () => {
   }
 
 
+  
   }
+
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-xl font-bold mb-4">在院患者</h1>

@@ -14,10 +14,13 @@ const AddPatientPopUp = ({ isOpen, onClose, onSave }) => {
     
       const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
+        console.log('The form data is changed!!!')
+        console.log(formData)
       };
     
       const handleSubmit = (e) => {
         e.preventDefault();
+        console.log('This submit is called')
         onSave(formData);
         onClose();
       };
@@ -93,6 +96,7 @@ const AddPatientPopUp = ({ isOpen, onClose, onSave }) => {
             <button
               type="submit"
               className="p-2 bg-blue-500 text-white rounded"
+              onClick={handleSubmit}
             >
               保存
             </button>
