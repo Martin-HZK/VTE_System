@@ -33,7 +33,7 @@ const DetailedDashBoard = () => {
             <tbody>
               <tr>
                 <td className="border border-gray-300 p-2">{patientInfo.name}</td>
-                <td className="border border-gray-300 p-2">{propToPass}</td>
+                <td className="border border-gray-300 p-2">{patientInfo.gender}</td>
               </tr>
               <tr>
                 <th className="border border-gray-300 p-2">年龄</th>

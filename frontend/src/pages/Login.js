@@ -9,6 +9,12 @@ const Login = () => {
   const [checked, setChecked] = useState(false);
   const navigate = useNavigate();
 
+  const handleRegister = (e) => {
+    e.preventDefault();
+    console.log("Redirecting to register page");
+    navigate("register");
+  }
+
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
   }
@@ -88,6 +94,8 @@ const Login = () => {
           </div>
           <div>
             <button onClick={handleLogin}type="submit" className="w-full px-4 py-2 text-white bg-indigo-600 rounded hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50">登陆</button>
+            <button onClick={handleRegister}type="submit" className="w-full px-4 py-2 text-white bg-indigo-600 rounded hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50 mt-2">注册</button>
+          
           </div>
         </form>
       </div>
