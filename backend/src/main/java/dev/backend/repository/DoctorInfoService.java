@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 
 @Service
 public class DoctorInfoService {
@@ -31,6 +33,7 @@ public class DoctorInfoService {
             DoctorInfo newDoctorInfo = new DoctorInfo();
             newDoctorInfo.setName(username);
             newDoctorInfo.setPassword(password);
+            newDoctorInfo.setPatients(new ArrayList<>());
             doctorInfoRepository.save(newDoctorInfo);
             return true;
         } else {

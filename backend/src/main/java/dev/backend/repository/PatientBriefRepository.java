@@ -9,5 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface PatientBriefRepository extends MongoRepository<PatientBrief, ObjectId> {
-
+    Optional<PatientBrief> findByUnicode(String unicode);
 }

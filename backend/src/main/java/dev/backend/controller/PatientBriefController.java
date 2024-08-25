@@ -1,6 +1,7 @@
 package dev.backend.controller;
 
 
+import dev.backend.model.Detail;
 import dev.backend.model.PatientBrief;
 import dev.backend.repository.PatientBriefService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,10 @@ public class PatientBriefController {
         return new ResponseEntity<PatientBrief>(patientBriefService.addPatientBrief(unicode, name, gender, age, receive_time), HttpStatus.OK);
     }
 
+    @GetMapping("/details/get_ex_record")
+    public ResponseEntity<List<Detail>> getPatientBriefById(@RequestParam("unicode") String unicode) {
+        return new ResponseEntity<List<Detail>>(patientBriefService.allSpecificExRecord(unicode), HttpStatus.OK);
+    }
 
 
 }

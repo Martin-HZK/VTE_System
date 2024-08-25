@@ -1,6 +1,7 @@
 package dev.backend.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
@@ -30,6 +31,7 @@ public class PatientBrief {
     private String recent_exercise;
 
 
+    @Getter
     private List<Detail> details;
 
 //    private String detail_url;
@@ -53,9 +55,7 @@ public class PatientBrief {
         this.details = new ArrayList<Detail>();
     }
 
-
-
-//    public static class Detail {
+    //    public static class Detail {
 //        private String move_type;
 //        private String completion;
 //        private String score;
