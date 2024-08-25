@@ -26,7 +26,7 @@ public class PatientBrief {
     private String gender;
     private String age;
 
-    private String receive_time;
+    private String recieve_time;
 
     private String recent_exercise;
 
@@ -41,7 +41,7 @@ public class PatientBrief {
         this.name = name;
         this.gender = gender;
         this.age = age;
-        this.receive_time = receive_time;
+        this.recieve_time = receive_time;
         this.recent_exercise = recent_exercise;
         this.details = details;
     }
@@ -51,7 +51,7 @@ public class PatientBrief {
         this.name = name;
         this.gender = gender;
         this.age = age;
-        this.receive_time = receive_time;
+        this.recieve_time = receive_time;
         this.details = new ArrayList<Detail>();
     }
 

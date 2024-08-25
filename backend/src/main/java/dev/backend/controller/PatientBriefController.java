@@ -27,10 +27,10 @@ public class PatientBriefController {
     public ResponseEntity<PatientBrief> addPatientBrief(
             @RequestParam("unicode") String unicode, @RequestParam("name") String name,
             @RequestParam("gender") String gender, @RequestParam("age") String age,
-            @RequestParam("receive_time") String receive_time
+            @RequestParam("recieve_time") String recieve_time
             ) {
 
-        return new ResponseEntity<PatientBrief>(patientBriefService.addPatientBrief(unicode, name, gender, age, receive_time), HttpStatus.OK);
+        return new ResponseEntity<PatientBrief>(patientBriefService.addPatientBrief(unicode, name, gender, age, recieve_time), HttpStatus.OK);
     }
 
     @GetMapping("/details/get_ex_record")

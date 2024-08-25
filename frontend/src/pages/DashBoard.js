@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import api from '../api/axiosConfig';
 import AddPatientPopUp from '../components/AddPatientPopUp';
 
@@ -11,7 +11,7 @@ const DashBoard = () => {
   const [name, setName] = useState("");
   const [gender, setGender] = useState("");
   const [age, setAge] = useState("");
-  const [receive_time, setReceiveTime] = useState("");
+  const [recieve_time, setRecieveTime] = useState("");
   const [recent_exercise, setRecentExercise] = useState("");
   // const [detail_url, setDetailUrl] = useState("");
   // const [details, setDetails] = useState("");
@@ -20,6 +20,8 @@ const DashBoard = () => {
   }, []);
 
   const navigate = useNavigate();
+  const location = useLocation();
+  const { propToPass } = location.state || {}; // 获取传递的unicode
 
 
   const fetchPatients = async () => {
@@ -40,12 +42,12 @@ const DashBoard = () => {
     sendFormData.append("name", formData.name);
     sendFormData.append('gender', formData.gender);
     sendFormData.append('age', formData.age);
-    sendFormData.append('receive_time', formData.receive_time);
+    sendFormData.append('recieve_time', formData.recieve_time);
     // formData.append("unicode", unicode);
     // formData.append("name", name);
     // formData.append("gender", gender);
     // formData.append("age", age);
-    // formData.append("receive_time", receive_time);
+
 
 
     // formData.append("recent_excercise", recent_excercise);
@@ -61,7 +63,7 @@ const DashBoard = () => {
       setName("");
       setGender("");
       setAge("");
-      setReceiveTime("");
+      setRecieveTime("");
       // setRecentExcercise("");
       // setDetails("");
       // setDetailUrl("");
@@ -101,8 +103,8 @@ const DashBoard = () => {
               <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">{patient.name}</td>
               <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">{patient.gender}</td>
               <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">{patient.age}</td>
-              <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">{patient.receive_time}</td>
-              <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">{patient.recent_exercise}</td>
+              <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">{patient.recieve_time}</td>
+              <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell">TBC</td>
               <td className="p-2 md:border md:border-gray-300 text-left block md:table-cell" onClick={()=> navigate('/details', { state: { propToPass: patient.unicode}}) }>详情</td>
             </tr>
           ))}
