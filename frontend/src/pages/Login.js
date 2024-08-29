@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
 import {useState} from 'react';
 import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import api from '../api/axiosConfig';
+import { UserContext } from '../userContextProvider/UserContext';
 const Login = () => {
-
+  const { setGlobalUsername } = useContext(UserContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [checked, setChecked] = useState(false);
@@ -48,7 +49,7 @@ const Login = () => {
       if(response.data == true) {
         console.log("Login success!Redirecting to upload image page");
         navigate("dashboard", { state: { propToPass: username} });
-        // setGlobUsername(username);
+        setGlobalUsername(username);
       } else {
         console.log("Login failed! Please check your username and password!");
         alert("Login failed! Please check your username and password!");

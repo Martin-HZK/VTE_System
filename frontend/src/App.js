@@ -8,28 +8,31 @@ import MainLayout from './MainLayout';
 import DashBoard from './pages/DashBoard';
 import DetailedDashBoard from './pages/DetailedDashBoard';
 import Register from './pages/Register';
+import { UserProvider } from './userContextProvider/UserContext';
 function App() {
   return (
     <div className="App">
       {/* <div>
         <h1 className='text-3xl font-bold underline'>My first React App</h1>
       </div> */}
-<Router>
-      <Routes>
-        <Route path='/' element={<StarterLayout />}>
-          <Route index element={<Login />}></Route>
-          <Route path='/register' element={<Register />}></Route>
+      <UserProvider>
+      <Router>
+        <Routes>
+          <Route path='/' element={<StarterLayout />}>
+            <Route index element={<Login />}></Route>
+            <Route path='/register' element={<Register />}></Route>
 
-          
+            
 
-        </Route>
-        <Route element={<MainLayout />}>
-            <Route path='/dashboard' element={<DashBoard />}></Route>
-            <Route path='/details' element={<DetailedDashBoard />}></Route>
           </Route>
-        {/* There can be another system router integrated here */}
-      </Routes>
+          <Route element={<MainLayout />}>
+              <Route path='/dashboard' element={<DashBoard />}></Route>
+              <Route path='/details' element={<DetailedDashBoard />}></Route>
+            </Route>
+          {/* There can be another system router integrated here */}
+        </Routes>
       </Router>
+      </UserProvider>
     </div>
   );
 }
