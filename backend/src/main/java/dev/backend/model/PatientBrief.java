@@ -54,22 +54,7 @@ public class PatientBrief {
         this.recieve_time = receive_time;
         this.details = new ArrayList<Detail>();
     }
-
-    //    public static class Detail {
-//        private String move_type;
-//        private String completion;
-//        private String score;
-//        private String complete_time;
-//
-//        // Getters and Setters
-//
-//        public Detail(String move_type, String completion, String score, String complete_time) {
-//            this.move_type = move_type;
-//            this.completion = completion;
-//            this.score = score;
-//            this.complete_time = complete_time;
-//        }
-//    }
+    
 }
 
 
